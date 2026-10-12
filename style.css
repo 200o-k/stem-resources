@@ -1,0 +1,57 @@
+:root{background:#080808;color:#eceae5;color-scheme:dark;font-family:'Times New Roman',Times,serif;font-weight:400}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;}a{color:inherit;text-decoration:none}button,input,select{font-family:inherit}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}[hidden]{display:none!important}
+.sitebar{height:72px;border-bottom:1px solid #292929;padding:0 clamp(24px,4.8vw,96px);display:flex;align-items:center;justify-content:space-between}
+.masthead{font-size:25px;letter-spacing:.005em;font-weight:400}.header-note{font-size:14px;color:#969696}
+.landing{max-width:1450px;padding:72px clamp(24px,5vw,96px) 125px;margin:auto}.index-heading{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #343434;padding-bottom:21px;margin-bottom:33px}
+.index-heading h1{font-size:clamp(39px,4.1vw,57px);font-weight:400;line-height:1;margin:0}.index-count{color:#888;font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}.sim-card{min-width:0;border:1px solid #3a3a3a;background:#0a0a0a;overflow:hidden;border-radius:9px}
+.sim-card.active{transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}.sim-card.active:hover,.sim-card.active:focus-visible{border-color:#c1c0b9;transform:translateY(-3px);box-shadow:0 7px 22px #0008;outline:none}
+.card-image{aspect-ratio:1.48;position:relative;background:#000;overflow:hidden}.card-image img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .25s ease;filter:brightness(.83)}.sim-card.active:hover img{transform:scale(1.035);filter:brightness(1)}
+.card-id{position:absolute;top:15px;left:17px;font-size:17px;color:#c9c9c9;background:#0008;padding:2px 7px}.card-caption{display:flex;justify-content:space-between;align-items:center;padding:20px 20px 21px;min-height:102px;gap:12px}.card-caption h2{font-size:23px;font-weight:400;margin:0 0 6px}.card-caption p{font-size:15px;color:#989898;margin:0}.open-arrow{font-size:29px;color:#d5d5cd;line-height:1;transition:transform .2s}.sim-card.active:hover .open-arrow{transform:translate(2px,-3px)}
+.upcoming{opacity:.46}.empty-image{display:grid;place-items:center}.empty-image span{font-size:72px;color:#383838;font-style:italic}
+.simulation{max-width:1650px;margin:auto;padding:0 clamp(13px,3vw,54px) 80px}.simulation-heading{display:flex;justify-content:space-between;align-items:center;height:70px;gap:15px;font-size:16px;color:#b6b4ae}.simulation-name{font-size:21px;font-style:italic;color:#e5e1da}.back:hover,.full-screen:hover,.reset:hover{text-decoration:underline;text-underline-offset:3px}.full-screen,.reset{padding:8px 0;border:0;background:none;color:#ddd;font-size:16px}
+.sim-layout{display:grid;grid-template-columns:minmax(0,1fr) 245px;gap:28px;align-items:start}.board{display:flex;justify-content:center;min-width:0}
+.display{width:min(100%,calc((100vh - 155px)*1178/1088));aspect-ratio:1178/1088;background:#000;position:relative;color:white;overflow:hidden}
+.display>div{position:absolute;z-index:1}#gpuCanvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;z-index:0}
+.spectrum{left:8.57%;top:5.70%;width:5.0%;height:54.14%;border:1px solid #373737}.spectrum-line{position:absolute;left:7%;width:86%;height:1px!important;background:currentColor;box-shadow:none}.spectrum-unavailable{font-family:serif}
+.atom-frame{left:15.45%;top:5.70%;width:48.22%;height:54.14%;border:1px solid #383838}.atom-frame canvas{width:100%;height:100%;display:block;touch-action:none;opacity:0}.excitation-readout{position:absolute;top:5%;left:5%;white-space:pre-line;font:italic clamp(10px,1.16vw,17px)/1.45 'Times New Roman',serif;pointer-events:none;opacity:0;text-shadow:0 0 4px #000}
+.side-orbitals{left:65.45%;top:5.70%;width:13.24%;height:54.14%;border:1px solid #383838;display:grid;grid-template-rows:repeat(4,minmax(0,1fr))}.top-orbital{left:80.47%;top:5.70%;width:13.24%;height:14.34%;border:1px solid #383838}.large-orbitals{left:80.47%;top:22.15%;width:13.24%;height:54.14%;border:1px solid #383838;display:grid;align-content:start}.bottom-orbitals{left:28.61%;top:61.49%;width:50.08%;height:14.34%;border:1px solid #383838;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.slot{position:relative;min-width:0;min-height:0;overflow:hidden;pointer-events:none}.slot canvas{opacity:0;width:100%;height:100%;display:block}
+.element-info{left:8.65%;top:62.3%;width:53%;height:32%;font-family:'Times New Roman',serif}.element-symbol{height:39%;display:flex;align-items:flex-start;gap:.4em}.element-symbol #symbol{font-size:clamp(44px,6.8vw,110px);line-height:.96}.mass{display:flex;flex-direction:column;gap:0;justify-content:center;font-size:clamp(16px,1.9vw,29px);padding-top:.6em}.mass small{font-size:inherit}.element-name{font-size:clamp(22px,3.55vw,54px);line-height:1.13;font-style:italic;margin-top:2%}.root{font-style:italic}.config-row{display:flex;gap:1.6em;flex-wrap:wrap;align-items:baseline;margin-top:4%;font-size:clamp(16px,2.35vw,32px)}.config-row sup{font-size:.57em}.config-row #atomicZ{font-style:italic}
+.quantum{left:66.5%;top:78.6%;width:28.0%;height:16.7%;font-family:'Times New Roman',serif;text-align:center;font-style:italic}.q-head,.q-values{display:grid;grid-template-columns:repeat(4,1fr);font-size:clamp(15px,1.65vw,27px)}.q-head{border-bottom:1px solid #aaa}.q-caption{font-size:clamp(17px,2.1vw,31px);margin-top:14%}
+.controls{border-top:1px solid #373737;padding-top:14px}.controls h2{font-size:25px;font-weight:400;margin:0 0 26px}.control{margin:0 0 24px}.control>label,.options label{display:flex;justify-content:space-between;align-items:center;color:#c6c4bf;font-size:17px;margin:0 0 11px;gap:12px}.control select{width:100%;padding:10px 9px;background:#111;border:1px solid #4b4b4b;color:#e8e7e2;font-size:16px;margin:0 0 14px}.control input[type=range]{width:100%;accent-color:#aaa69b}.range{display:flex;justify-content:space-between;font-size:14px;color:#8d8d8d}.excite{border:1px solid #b8b7b1;background:#dedbd5;color:#191919;width:100%;text-align:left;padding:11px 13px;font-size:19px;display:flex;justify-content:space-between;align-items:center;margin:10px 0 27px}.excite:hover:not(:disabled){background:white}.excite span{font-size:14px}.options{padding-top:23px;border-top:1px solid #383838}.options label{font-size:17px}.options input{accent-color:#a9a9a9}.controls-help{font-size:15px;color:#888;line-height:1.8;margin:28px 0 0}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(max-width:1020px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.sim-layout{grid-template-columns:1fr}.display{width:min(100%,calc((100vh - 170px)*1178/1088))}.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 28px}.controls h2,.controls-help{grid-column:1/-1}.simulation{padding-bottom:75px}.element-symbol #symbol{font-size:9vw}.element-name{font-size:4.2vw}}
+@media(max-width:590px){.sitebar{height:60px}.header-note{display:none}.landing{padding-top:47px}.index-heading h1{font-size:42px}.cards{grid-template-columns:1fr}.simulation-heading{height:62px}.simulation-name{font-size:17px}.full-screen{font-size:13px}.simulation{padding:0 8px 55px}.display{width:100%}.controls{display:block;padding:15px 12px}.element-symbol #symbol{font-size:10vw}.mass{font-size:3vw}.element-name{font-size:4.2vw}.config-row{font-size:2.9vw}.quantum .q-head,.quantum .q-values{font-size:2.8vw}.q-caption{font-size:2.8vw}}
+
+.canvas-fallback .atom-frame canvas,.canvas-fallback .slot canvas{opacity:1}
+
+/* Exact original projector-space text layout; scales as one SVG layer. */
+.info-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;overflow:visible;color:#fff}
+.info-overlay text{fill:currentColor;font-family:'Times New Roman',Times,serif;font-weight:400}
+.info-overlay .secondary{fill:#b8b8b8}
+/* Do not give the opaque GPU canvas any chance of obscuring panel outlines. */
+.spectrum,.atom-frame,.side-orbitals,.top-orbital,.large-orbitals,.bottom-orbitals{border-color:#424242}
+/* Orbital view affordance appears only while pointing at an occupied view. */
+.slot{pointer-events:auto;cursor:zoom-in;outline-offset:-3px}
+.slot:hover,.slot:focus-visible{outline:1px solid #989898;z-index:4}
+.slot:focus-visible{outline:2px solid #eee}
+.slot::after{content:'↗';position:absolute;right:5px;top:3px;color:#ddd;font:italic 12px/1 'Times New Roman',serif;opacity:0;transition:opacity .15s;pointer-events:none}
+.slot:hover::after,.slot:focus-visible::after{opacity:1}
+.orbital-modal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.91);display:grid;place-items:center;padding:26px}
+.orbital-modal-inner{background:#050505;border:1px solid #555;width:min(80vw,700px);max-height:90vh;padding:15px 18px 12px;display:flex;flex-direction:column}
+.orbital-modal-heading{display:flex;align-items:center;justify-content:space-between;gap:14px;font:italic 22px 'Times New Roman',serif}
+.orbital-modal-heading button{background:transparent;border:0;color:#dedede;font:normal 17px 'Times New Roman',serif;padding:7px;cursor:pointer}
+#orbitalZoomCanvas{display:block;width:100%;aspect-ratio:1/1;min-height:0;touch-action:none;cursor:grab;outline:none}
+#orbitalZoomCanvas:active{cursor:grabbing}
+.orbital-modal-help{color:#a4a4a4;font-size:15px;text-align:center;margin:5px 0 0}
+@media(max-width:590px){.orbital-modal{padding:10px}.orbital-modal-inner{width:100%}}
+
+.orbital-hover{position:fixed;z-index:75;width:238px;height:260px;background:#040404;border:1px solid #555;box-shadow:0 14px 40px #000c;pointer-events:none;padding:12px}
+#orbitalHoverLabel{font-size:17px;font-style:italic;height:22px}
+#orbitalHoverCanvas{width:100%;height:calc(100% - 22px);display:block}
+
+/* The first orbital lives in a single-child panel, unlike the grid previews.
+   It MUST fill the whole square so its WebGL scissor rectangle is centred. */
+.top-orbital{display:grid;grid-template-columns:1fr;grid-template-rows:1fr}
+.top-orbital>.slot{width:100%;height:100%;min-width:0;min-height:0}
+/* Other orbital slots also fill their grid tracks from the first frame. */
+.side-orbitals>.slot,.bottom-orbitals>.slot,.large-orbitals>.slot{width:100%;height:100%}

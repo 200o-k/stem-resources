@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080808"><title>Simulations</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="sitebar"><a href="#/" class="masthead">Simulations</a><span class="header-note">Physics &nbsp; / &nbsp; Chemistry &nbsp; / &nbsp; Mathematics</span></header>
+<main id="landing" class="landing">
+  <div class="index-heading"><h1>Simulations</h1><span class="index-count">01 available</span></div>
+  <div class="cards" aria-label="Simulation catalogue">
+    <a class="sim-card active" href="#/atom"><div class="card-image"><img src="assets/atomic-cover.jpg" alt="The original atomic visualiser showing a glowing electron density and orbital views"><span class="card-id">01</span></div><div class="card-caption"><div><h2>Atomic structure</h2><p>Electron orbitals and excitation</p></div><span class="open-arrow">↗</span></div></a>
+    <div class="sim-card upcoming"><div class="card-image empty-image"><span>02</span></div><div class="card-caption"><div><h2>— — —</h2><p>In preparation</p></div></div></div>
+    <div class="sim-card upcoming"><div class="card-image empty-image"><span>03</span></div><div class="card-caption"><div><h2>— — —</h2><p>In preparation</p></div></div></div>
+    <div class="sim-card upcoming"><div class="card-image empty-image"><span>04</span></div><div class="card-caption"><div><h2>— — —</h2><p>In preparation</p></div></div></div>
+  </div>
+</main>
+<main id="simulation" class="simulation" hidden>
+  <div class="simulation-heading"><a href="#/" class="back">← &nbsp; Simulations</a><span class="simulation-name">Atomic structure</span><button id="fullscreen" class="full-screen">Full screen ↗</button></div>
+  <div class="sim-layout"><section class="board" aria-label="Atomic structure model">
+    <div class="display" id="display">
+      <canvas id="gpuCanvas" aria-label="WebGL atomic probability density"></canvas>
+      <div id="spectrum" class="spectrum" aria-label="Reference spectrum"></div>
+      <div class="atom-frame"><canvas id="atomCanvas" aria-label="Rotatable atom"></canvas><div id="excitationReadout" class="excitation-readout"></div></div>
+      <div class="side-orbitals" id="sideOrbitals"></div><div class="top-orbital" id="topOrbital"></div><div class="large-orbitals" id="largeOrbitals"></div><div class="bottom-orbitals" id="bottomOrbitals"></div>
+      <!-- Fixed design-space typography. All positions correspond to the C++ 1178 x 1088 layout. -->
+      <svg id="infoOverlay" class="info-overlay" viewBox="0 0 1178 1088" preserveAspectRatio="xMidYMid meet" aria-label="Element and quantum numbers information">
+        <g id="elementSvg"></g><g id="quantumSvg"></g>
+      </svg>
+    </div>
+    <div id="orbitalGallery" hidden></div><span id="orbitalCount" hidden></span><span id="panelElementLabel" hidden></span><span id="excitationStatus" class="sr-only" aria-live="polite"></span>
+  </section>
+  <aside class="controls">
+    <h2>Controls</h2>
+    <div class="control"><label for="elementSelect">Element <span id="atomicNumberDisplay">18</span></label><select id="elementSelect"></select><input id="atomicNumber" type="range" min="1" max="54" value="18"><div class="range"><span>H</span><span>Xe</span></div></div>
+    <button class="excite" id="exciteBtn">Excite <span>Space</span></button>
+    <div class="control options"><label>Automatic rotation<input type="checkbox" id="rotateToggle" checked></label><label>Cutaway<input type="checkbox" id="cutawayToggle"></label></div>
+    <div class="control"><label for="sampleSlider">Samples <span id="detailValue">30,000</span></label><input id="sampleSlider" type="range" min="6000" max="45000" value="30000" step="3000"></div>
+    <button class="reset" id="resetView">Reset view ↺</button>
+    <p class="controls-help">Drag to rotate &nbsp; · &nbsp; Scroll to zoom<br>← / → change element</p>
+  </aside></div>
+</main>
+<div id="orbitalHover" class="orbital-hover" hidden><div id="orbitalHoverLabel"></div><canvas id="orbitalHoverCanvas"></canvas></div>
+<div id="orbitalModal" class="orbital-modal" hidden role="dialog" aria-modal="true" aria-labelledby="orbitalModalTitle">
+  <div class="orbital-modal-inner">
+    <div class="orbital-modal-heading"><span id="orbitalModalTitle">Orbital</span><button id="orbitalClose" aria-label="Close enlarged orbital">Close ×</button></div>
+    <canvas id="orbitalZoomCanvas" aria-label="Enlarged three-dimensional orbital"></canvas>
+    <p class="orbital-modal-help">Drag to rotate &nbsp; · &nbsp; Esc to close</p>
+  </div>
+</div>
+<script src="gpu.js" defer></script><script src="info.js" defer></script><script src="app.js" defer></script><script src="view.js" defer></script>
+</body></html>
